@@ -291,7 +291,7 @@ endfunction
 
 function! s:X(name, fg, bg, style)
   if has('gui_running')
-    let cmd = s:gui_string(a:name, a:fg, a:bg, style)
+    let cmd = s:gui_string(a:name, a:fg, a:bg, a:style)
   else
     let cmd = s:cterm_string(a:name, a:fg, a:bg, a:style)
   endif
