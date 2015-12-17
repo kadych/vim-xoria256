@@ -3,7 +3,8 @@ if get(g:, 'loaded_airline', 0)
 
   let N1 = xoria256#colors('x234_Grey11', 'x110_LightSkyBlue3')
   let N2 = xoria256#colors('x248_Grey66', 'x237_Grey23')
-  let N3 = xoria256#colors('x241_Grey39', 'x234_Grey11')
+  " let N3 = xoria256#colors('x241_Grey39', 'x234_Grey11')
+  let N3 = xoria256#colors('x248_Grey66', 'x235_Grey15')
   let g:airline#themes#xoria256#palette.normal = airline#themes#generate_color_map(N1, N2, N3)
   let g:airline#themes#xoria256#palette.normal_modified = {
         \ 'airline_c': xoria256#colors('x180_Tan', 'x234_Grey11') + [''],
