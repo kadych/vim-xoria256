@@ -316,11 +316,11 @@ call s:X('Cursor', '', 'x180_Tan', 'none') " the character under the cursor
 call s:X('CursorColumn', '', 'x235_Grey15', 'none') " the screen column that the cursor is in
 call s:X('CursorLine', '', 'x235_Grey15', 'none') " the screen line that the cursor is in
 call s:X('FoldColumn', 'x241_Grey39', 'x233_Grey7', 'none') " fold column color
-call s:X('Folded', 'x255_Grey93', 'x060_MediumPurple4', 'none') " line used for closed folds
+call s:X('Folded', 'x248_Grey66', 'x237_Grey23', 'none') " line used for closed folds
 call s:X('IncSearch', 'x234_Grey11', 'x223_NavajoWhite1', 'none') " incsearch highlighting
 call s:X('LineNr', 'x241_Grey39', 'x233_Grey7', 'none') " line number
 call s:X('CursorLineNr', 'x229_Wheat1', 'x233_Grey7', 'none') " like LineNr for the cursor line
-call s:X('MatchParen', 'x234_Grey11', 'x110_LightSkyBlue3', 'bold') " a paired bracket and its match
+call s:X('MatchParen', 'x174_LightPink3', 'x237_Grey23', 'bold') " a paired bracket and its match
 call s:X('NonText', 'x241_Grey39', 'x234_Grey11', 'bold') " ~ and @ at the end of the window
 
 call s:X('Pmenu', 'x248_Grey66', 'x237_Grey23', 'none') " popup menu - noraml item
