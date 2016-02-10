@@ -262,7 +262,7 @@ let s:colors = {
 " }}}
 
 function! s:gui_string(name, fg, bg, style)
-  let cmd = 'hi '.a:name
+  let cmd = ''
   if a:fg != ''
     let cmd .= ' guifg='.s:colors[a:fg][0]
   endif
@@ -276,7 +276,7 @@ function! s:gui_string(name, fg, bg, style)
 endfunction
 
 function! s:cterm_string(name, fg, bg, style)
-  let cmd = 'hi '.a:name
+  let cmd = ''
   if a:fg != ''
     let cmd .= ' ctermfg='.s:colors[a:fg][1]
   endif
@@ -290,11 +290,9 @@ function! s:cterm_string(name, fg, bg, style)
 endfunction
 
 function! s:X(name, fg, bg, style)
-  if has('gui_running')
-    let cmd = s:gui_string(a:name, a:fg, a:bg, a:style)
-  else
-    let cmd = s:cterm_string(a:name, a:fg, a:bg, a:style)
-  endif
+  let cmd = 'hi '.a:name
+  let cmd .= s:gui_string(a:name, a:fg, a:bg, a:style)
+  let cmd .= s:cterm_string(a:name, a:fg, a:bg, a:style)
   " echomsg cmd
   execute cmd
 endfunction
