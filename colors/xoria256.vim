@@ -263,10 +263,14 @@ let s:colors = {
 
 function! s:gui_string(name, fg, bg, style)
   let cmd = ''
-  if a:fg != ''
+  if a:fg == 'none'
+    let cmd .= ' guifg=none'
+  elseif a:fg != ''
     let cmd .= ' guifg='.s:colors[a:fg][0]
   endif
-  if a:bg != ''
+  if a:bg == 'none'
+    let cmd .= ' guibg=none'
+  elseif a:bg != ''
     let cmd .= ' guibg='.s:colors[a:bg][0]
   endif
   if a:style != ''
@@ -277,10 +281,14 @@ endfunction
 
 function! s:cterm_string(name, fg, bg, style)
   let cmd = ''
-  if a:fg != ''
+  if a:fg == 'none'
+    let cmd .= ' ctermfg=none'
+  elseif a:fg != ''
     let cmd .= ' ctermfg='.s:colors[a:fg][1]
   endif
-  if a:bg != ''
+  if a:bg == 'none'
+    let cmd .= ' ctermbg=none'
+  elseif a:bg != ''
     let cmd .= ' ctermbg='.s:colors[a:bg][1]
   endif
   if a:style != ''
@@ -316,6 +324,7 @@ call s:X('CursorLine', '', 'x235_Grey15', 'none') " the screen line that the cur
 call s:X('FoldColumn', 'x241_Grey39', 'x233_Grey7', 'none') " fold column color
 call s:X('Folded', 'x248_Grey66', 'x237_Grey23', 'none') " line used for closed folds
 call s:X('IncSearch', 'x234_Grey11', 'x223_NavajoWhite1', 'none') " incsearch highlighting
+call s:X('Search', 'none', 'x235_Grey15', 'bold')
 call s:X('LineNr', 'x241_Grey39', 'x233_Grey7', 'none') " line number
 call s:X('CursorLineNr', 'x229_Wheat1', 'x233_Grey7', 'none') " like LineNr for the cursor line
 call s:X('MatchParen', 'x174_LightPink3', 'x237_Grey23', 'bold') " a paired bracket and its match
@@ -334,7 +343,6 @@ call s:X('WarningMsg', 'x252_Grey82', 'x234_Grey11', 'none') " warning messages
 call s:X('ErrorMsg', 'x174_LightPink3', 'x234_Grey11', 'none') " error messages
 call s:X('Question', 'x180_Tan', 'x234_Grey11', 'none') " hit-enter propmpt and yes/no questions
 
-call s:X('Search', 'x234_Grey11', 'x146_LightSteelBlue3', 'none')
 call s:X('SignColumn', 'x255_Grey93', 'x233_Grey7', 'none')
 call s:X('ColorColumn', '', 'x233_Grey7', 'none')
 call s:X('SpecialKey', 'x150_DarkSeaGreen3', '', 'none') " meta and special keys listed with :map
@@ -418,4 +426,6 @@ call s:X('DiffAdd', 'x234_Grey11', 'x150_DarkSeaGreen3', 'none')
 call s:X('DiffChange', 'x248_Grey66', 'x237_Grey23', 'none')
 call s:X('DiffDelete', 'x234_Grey11', 'x174_LightPink3', 'none')
 call s:X('DiffText', 'x237_Grey23', 'x234_Grey11', 'none')
+
+call s:X('Directory', 'x110_LightSkyBlue3', '', 'none')
 " vim: set ts=2 sts=2 sw=2 et ff=unix fen:
