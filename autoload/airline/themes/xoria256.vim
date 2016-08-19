@@ -7,7 +7,7 @@ if get(g:, 'loaded_airline', 0)
   let N3 = xoria256#colors('x248_Grey66', 'x235_Grey15')
   let g:airline#themes#xoria256#palette.normal = airline#themes#generate_color_map(N1, N2, N3)
   let g:airline#themes#xoria256#palette.normal_modified = {
-        \ 'airline_c': xoria256#colors('x180_Tan', 'x234_Grey11') + [''],
+        \ 'airline_c': xoria256#colors('x180_Tan', 'x235_Grey15') + [''],
         \ }
 
   let I1 = xoria256#colors('x234_Grey11', 'x150_DarkSeaGreen3')
@@ -15,7 +15,7 @@ if get(g:, 'loaded_airline', 0)
   let I3 = N3
   let g:airline#themes#xoria256#palette.insert = airline#themes#generate_color_map(I1, I2, I3)
   let g:airline#themes#xoria256#palette.insert_modified = {
-        \ 'airline_c': xoria256#colors('x180_Tan', 'x234_Grey11') + [''],
+        \ 'airline_c': xoria256#colors('x180_Tan', 'x235_Grey15') + [''],
         \ }
   let g:airline#themes#xoria256#palette.insert_paste = {
         \ 'airline_a': [ I1[0], xoria256#g('x180_Tan'), I1[2], xoria256#c('x180_Tan'), '' ],
@@ -33,7 +33,7 @@ if get(g:, 'loaded_airline', 0)
   let V3 = N3
   let g:airline#themes#xoria256#palette.visual = airline#themes#generate_color_map(V1, V2, V3)
   let g:airline#themes#xoria256#palette.visual_modified = {
-        \ 'airline_c': xoria256#colors('x180_Tan', 'x234_Grey11') + [''],
+        \ 'airline_c': xoria256#colors('x180_Tan', 'x235_Grey15') + [''],
         \ }
 
 
@@ -42,7 +42,7 @@ if get(g:, 'loaded_airline', 0)
   let IA3 = IA1
   let g:airline#themes#xoria256#palette.inactive = airline#themes#generate_color_map(IA1, IA2, IA3)
   let g:airline#themes#xoria256#palette.inactive_modified = {
-        \ 'airline_c': xoria256#colors('x180_Tan', 'x234_Grey11') + [''],
+        \ 'airline_c': xoria256#colors('x180_Tan', 'x235_Grey15') + [''],
         \ }
   let g:airline#themes#xoria256#palette.accents = {
         \ 'red': [ xoria256#g('x174_LightPink3'), '', xoria256#c('x174_LightPink3'), '' ]
