@@ -263,13 +263,13 @@ let s:colors = {
 
 function! s:gui_string(name, fg, bg, style)
   let cmd = ''
-  if a:fg == 'none'
-    let cmd .= ' guifg=none'
+  if a:fg == 'NONE'
+    let cmd .= ' guifg=NONE'
   elseif a:fg != ''
     let cmd .= ' guifg='.s:colors[a:fg][0]
   endif
-  if a:bg == 'none'
-    let cmd .= ' guibg=none'
+  if a:bg == 'NONE'
+    let cmd .= ' guibg=NONE'
   elseif a:bg != ''
     let cmd .= ' guibg='.s:colors[a:bg][0]
   endif
@@ -281,13 +281,13 @@ endfunction
 
 function! s:cterm_string(name, fg, bg, style)
   let cmd = ''
-  if a:fg == 'none'
-    let cmd .= ' ctermfg=none'
+  if a:fg == 'NONE'
+    let cmd .= ' ctermfg=NONE'
   elseif a:fg != ''
     let cmd .= ' ctermfg='.s:colors[a:fg][1]
   endif
-  if a:bg == 'none'
-    let cmd .= ' ctermbg=none'
+  if a:bg == 'NONE'
+    let cmd .= ' ctermbg=NONE'
   elseif a:bg != ''
     let cmd .= ' ctermbg='.s:colors[a:bg][1]
   endif
@@ -317,94 +317,94 @@ function! xoria256#colors(fg, bg)
   return [xoria256#g(a:fg), xoria256#g(a:bg), xoria256#c(a:fg), xoria256#c(a:bg)]
 endfunction
 
-call s:X('Normal', 'x252_Grey82', 'x234_Grey11', 'none') " normal text
-call s:X('Cursor', '', 'x180_Tan', 'none') " the character under the cursor
-call s:X('CursorColumn', '', 'x235_Grey15', 'none') " the screen column that the cursor is in
-call s:X('CursorLine', '', 'x235_Grey15', 'none') " the screen line that the cursor is in
-call s:X('FoldColumn', 'x241_Grey39', 'x233_Grey7', 'none') " fold column color
-call s:X('Folded', 'x248_Grey66', 'x237_Grey23', 'none') " line used for closed folds
-call s:X('IncSearch', 'x234_Grey11', 'x223_NavajoWhite1', 'none') " incsearch highlighting
-call s:X('Search', 'none', 'x235_Grey15', 'bold')
-call s:X('LineNr', 'x241_Grey39', 'x233_Grey7', 'none') " line number
-call s:X('CursorLineNr', 'x229_Wheat1', 'x233_Grey7', 'none') " like LineNr for the cursor line
+call s:X('Normal', 'x252_Grey82', 'x234_Grey11', 'NONE') " normal text
+call s:X('Cursor', '', 'x180_Tan', 'NONE') " the character under the cursor
+call s:X('CursorColumn', '', 'x235_Grey15', 'NONE') " the screen column that the cursor is in
+call s:X('CursorLine', '', 'x235_Grey15', 'NONE') " the screen line that the cursor is in
+call s:X('FoldColumn', 'x241_Grey39', 'x233_Grey7', 'NONE') " fold column color
+call s:X('Folded', 'x248_Grey66', 'x237_Grey23', 'NONE') " line used for closed folds
+call s:X('IncSearch', 'x234_Grey11', 'x223_NavajoWhite1', 'NONE') " incsearch highlighting
+call s:X('Search', 'NONE', 'x235_Grey15', 'bold')
+call s:X('LineNr', 'x241_Grey39', 'x233_Grey7', 'NONE') " line number
+call s:X('CursorLineNr', 'x229_Wheat1', 'x233_Grey7', 'NONE') " like LineNr for the cursor line
 call s:X('MatchParen', 'x174_LightPink3', 'x237_Grey23', 'bold') " a paired bracket and its match
 call s:X('NonText', 'x241_Grey39', 'x234_Grey11', 'bold') " ~ and @ at the end of the window
 
-call s:X('Pmenu', 'x248_Grey66', 'x237_Grey23', 'none') " popup menu - noraml item
+call s:X('Pmenu', 'x248_Grey66', 'x237_Grey23', 'NONE') " popup menu - noraml item
 call s:X('PmenuSel', 'x234_Grey11', 'x150_DarkSeaGreen3', 'bold') " popup menu - selected item
-call s:X('PmenuSbar', '', 'x235_Grey15', 'none') " popup menu - scrollbar
-call s:X('PmenuThumb', '', 'x241_Grey39', 'none') " popup menu - thumb of the scrollbar
+call s:X('PmenuSbar', '', 'x235_Grey15', 'NONE') " popup menu - scrollbar
+call s:X('PmenuThumb', '', 'x241_Grey39', 'NONE') " popup menu - thumb of the scrollbar
 call s:X('WildMenu', 'x234_Grey11', 'x150_DarkSeaGreen3', 'bold') " used in wildmenu competion
 call s:X('Menu', 'x150_DarkSeaGreen3', '', 'bold') " colors for the menus
 
-call s:X('MoreMsg', 'x180_Tan', 'x234_Grey11', 'none') " -- More -- message
+call s:X('MoreMsg', 'x180_Tan', 'x234_Grey11', 'NONE') " -- More -- message
 call s:X('ModeMsg', 'x252_Grey82', 'x234_Grey11', 'bold') " -- INSERT -- message
-call s:X('WarningMsg', 'x252_Grey82', 'x234_Grey11', 'none') " warning messages
-call s:X('ErrorMsg', 'x174_LightPink3', 'x234_Grey11', 'none') " error messages
-call s:X('Question', 'x180_Tan', 'x234_Grey11', 'none') " hit-enter propmpt and yes/no questions
+call s:X('WarningMsg', 'x252_Grey82', 'x234_Grey11', 'NONE') " warning messages
+call s:X('ErrorMsg', 'x174_LightPink3', 'x234_Grey11', 'NONE') " error messages
+call s:X('Question', 'x180_Tan', 'x234_Grey11', 'NONE') " hit-enter propmpt and yes/no questions
 
-call s:X('SignColumn', 'x255_Grey93', 'x233_Grey7', 'none')
-call s:X('ColorColumn', '', 'x233_Grey7', 'none')
-call s:X('SpecialKey', 'x150_DarkSeaGreen3', '', 'none') " meta and special keys listed with :map
+call s:X('SignColumn', 'x255_Grey93', 'x233_Grey7', 'NONE')
+call s:X('ColorColumn', '', 'x233_Grey7', 'NONE')
+call s:X('SpecialKey', 'x150_DarkSeaGreen3', '', 'NONE') " meta and special keys listed with :map
 
-call s:X('SpellBad', 'x234_Grey11', 'x174_LightPink3', 'none')
+call s:X('SpellBad', 'x234_Grey11', 'x174_LightPink3', 'NONE')
 call s:X('SpellCap', 'x182_Thistle3', 'x234_Grey11', 'underline')
 call s:X('SpellRare', 'x182_Thistle3', 'x234_Grey11', 'underline')
 call s:X('SpellLocal', 'x146_LightSteelBlue3', 'x234_Grey11', 'underline')
 
-call s:X('StatusLine', 'x252_Grey82', 'x235_Grey15', 'none')
-call s:X('StatusLineNC', 'x248_Grey66', 'x235_Grey15', 'none')
+call s:X('StatusLine', 'x252_Grey82', 'x235_Grey15', 'NONE')
+call s:X('StatusLineNC', 'x248_Grey66', 'x235_Grey15', 'NONE')
 
-call s:X('TabLine', 'x248_Grey66', 'x237_Grey23', 'none')
+call s:X('TabLine', 'x248_Grey66', 'x237_Grey23', 'NONE')
 call s:X('TabLineSel', 'x252_Grey82', 'x233_Grey7', 'bold')
-call s:X('TabLineFill', 'x241_Grey39', 'x235_Grey15', 'none')
-call s:X('Title', 'x180_Tan', '', 'none')
+call s:X('TabLineFill', 'x241_Grey39', 'x235_Grey15', 'NONE')
+call s:X('Title', 'x180_Tan', '', 'NONE')
 
-call s:X('VertSplit', 'x241_Grey39', 'x235_Grey15', 'none')
-call s:X('Visual', 'x255_Grey93', 'x096_Plum4', 'none')
-call s:X('VisualNOS', 'x255_Grey93', 'x060_MediumPurple4', 'none')
+call s:X('VertSplit', 'x241_Grey39', 'x235_Grey15', 'NONE')
+call s:X('Visual', 'x255_Grey93', 'x096_Plum4', 'NONE')
+call s:X('VisualNOS', 'x255_Grey93', 'x060_MediumPurple4', 'NONE')
 
-call s:X('Constant', 'x229_Wheat1', '', 'none') " any constant
-call s:X('String', 'x229_Wheat1', '', 'none') " a string constant
-call s:X('Character', 'x229_Wheat1', '', 'none') " a character constant: 'c', '\n'
-call s:X('Number', 'x180_Tan', '', 'none') " a number constant: 234, 0xff
-call s:X('Boolean', 'x180_Tan', '', 'none') " a boolean constant: TRUE, false
-call s:X('Float', 'x180_Tan', '', 'none') " a floating point constant: 2.3e10
+call s:X('Constant', 'x229_Wheat1', '', 'NONE') " any constant
+call s:X('String', 'x229_Wheat1', '', 'NONE') " a string constant
+call s:X('Character', 'x229_Wheat1', '', 'NONE') " a character constant: 'c', '\n'
+call s:X('Number', 'x180_Tan', '', 'NONE') " a number constant: 234, 0xff
+call s:X('Boolean', 'x180_Tan', '', 'NONE') " a boolean constant: TRUE, false
+call s:X('Float', 'x180_Tan', '', 'NONE') " a floating point constant: 2.3e10
 
-call s:X('Identifier', 'x182_Thistle3', '', 'none') " any variable name
-" call s:X('Function', 'x182_Thistle3', '', 'none') " function name (also: methods for classes)
+call s:X('Identifier', 'x182_Thistle3', '', 'NONE') " any variable name
+" call s:X('Function', 'x182_Thistle3', '', 'NONE') " function name (also: methods for classes)
 
-call s:X('Statement', 'x110_LightSkyBlue3', '', 'none') " any statement
-" call s:X('Conditional', 'x110_LightSkyBlue3', '', 'none') " if, then, else, endif, switch, etc.
-" call s:X('Repeat', 'x110_LightSkyBlue3', '', 'none') " for, do, while, etc.
-" call s:X('Label', 'x110_LightSkyBlue3', '', 'none') " case, default, etc.
-" call s:X('Operator', 'x110_LightSkyBlue3', '', 'none') " sizeof, +, *, etc.
-" call s:X('Keyword', 'x110_LightSkyBlue3', '', 'none') " any other keyword
-" call s:X('Exception', 'x110_LightSkyBlue3', '', 'none') " try, catch, throw
+call s:X('Statement', 'x110_LightSkyBlue3', '', 'NONE') " any statement
+" call s:X('Conditional', 'x110_LightSkyBlue3', '', 'NONE') " if, then, else, endif, switch, etc.
+" call s:X('Repeat', 'x110_LightSkyBlue3', '', 'NONE') " for, do, while, etc.
+" call s:X('Label', 'x110_LightSkyBlue3', '', 'NONE') " case, default, etc.
+" call s:X('Operator', 'x110_LightSkyBlue3', '', 'NONE') " sizeof, +, *, etc.
+" call s:X('Keyword', 'x110_LightSkyBlue3', '', 'NONE') " any other keyword
+" call s:X('Exception', 'x110_LightSkyBlue3', '', 'NONE') " try, catch, throw
 
-call s:X('PreProc', 'x150_DarkSeaGreen3', '', 'none') " generic Preprocessor
-" call s:X('Include', 'x150_DarkSeaGreen3', '', 'none') " preprocessor #include
-" call s:X('Define', 'x150_DarkSeaGreen3', '', 'none') " preprocessor #define
-" call s:X('Macro', 'x150_DarkSeaGreen3', '', 'none') " same as Define
-" call s:X('PreCondit', 'x150_DarkSeaGreen3', '', 'none') " preprocessor #if, #else, #endif, etc.
+call s:X('PreProc', 'x150_DarkSeaGreen3', '', 'NONE') " generic Preprocessor
+" call s:X('Include', 'x150_DarkSeaGreen3', '', 'NONE') " preprocessor #include
+" call s:X('Define', 'x150_DarkSeaGreen3', '', 'NONE') " preprocessor #define
+" call s:X('Macro', 'x150_DarkSeaGreen3', '', 'NONE') " same as Define
+" call s:X('PreCondit', 'x150_DarkSeaGreen3', '', 'NONE') " preprocessor #if, #else, #endif, etc.
 
-call s:X('Type', 'x146_LightSteelBlue3', '', 'none') " int, long, char, etc.
-" call s:X('StorageClass', 'x146_LightSteelBlue3', '', 'none') " static, register, volatile, etc.
-" call s:X('Structure', 'x146_LightSteelBlue3', '', 'none') " struct, union, enum, etc.
-" call s:X('Typedef', 'x146_LightSteelBlue3', '', 'none') " a typedef
+call s:X('Type', 'x146_LightSteelBlue3', '', 'NONE') " int, long, char, etc.
+" call s:X('StorageClass', 'x146_LightSteelBlue3', '', 'NONE') " static, register, volatile, etc.
+" call s:X('Structure', 'x146_LightSteelBlue3', '', 'NONE') " struct, union, enum, etc.
+" call s:X('Typedef', 'x146_LightSteelBlue3', '', 'NONE') " a typedef
 
-call s:X('Special', 'x174_LightPink3', '', 'none') " any special symbol
-call s:X('SpecialChar', 'x180_Tan', '', 'none') " special character in a constant
-" call s:X('Tag', 'x174_LightPink3', '', 'none') " you can use CTRL-] on this
-" call s:X('Delimiter', 'x174_LightPink3', '', 'none') " character that needs attention
-call s:X('SpecialComment', 'x248_Grey66', '', 'none') " special things inside a comment
-" call s:X('Debug', 'x174_LightPink3', '', 'none') " debugging statements
+call s:X('Special', 'x174_LightPink3', '', 'NONE') " any special symbol
+call s:X('SpecialChar', 'x180_Tan', '', 'NONE') " special character in a constant
+" call s:X('Tag', 'x174_LightPink3', '', 'NONE') " you can use CTRL-] on this
+" call s:X('Delimiter', 'x174_LightPink3', '', 'NONE') " character that needs attention
+call s:X('SpecialComment', 'x248_Grey66', '', 'NONE') " special things inside a comment
+" call s:X('Debug', 'x174_LightPink3', '', 'NONE') " debugging statements
 
-call s:X('Ignore', 'x174_LightPink3', 'x234_Grey11', 'none') " left blank, hidden
+call s:X('Ignore', 'x174_LightPink3', 'x234_Grey11', 'NONE') " left blank, hidden
 call s:X('Error', 'x174_LightPink3', 'x234_Grey11', 'undercurl') " any erroneous construct
 call s:X('Todo', 'x223_NavajoWhite1', 'x234_Grey11', 'bold')
 call s:X('Underlined', 'x110_LightSkyBlue3', '', 'underline')
-call s:X('Comment', 'x241_Grey39', '', 'none')
+call s:X('Comment', 'x241_Grey39', '', 'NONE')
 
 " call s:X('TagbarComment', 'x241_Grey39'
 " call s:X('TagbarKind', 'x174_LightPink3'
@@ -422,10 +422,10 @@ call s:X('SyntasticWarningSign', 'x108_DarkSeaGreen', 'x233_Grey7', 'bold')
 call s:X('SyntasticStyleErrorSign', 'x174_LightPink3', 'x233_Grey7', 'bold')
 call s:X('SyntasticStyleWarningSign', 'x108_DarkSeaGreen', 'x233_Grey7', 'bold')
 
-call s:X('DiffAdd', 'x234_Grey11', 'x150_DarkSeaGreen3', 'none')
-call s:X('DiffChange', 'x248_Grey66', 'x237_Grey23', 'none')
-call s:X('DiffDelete', 'x234_Grey11', 'x174_LightPink3', 'none')
-call s:X('DiffText', 'x237_Grey23', 'x234_Grey11', 'none')
+call s:X('DiffAdd', 'x234_Grey11', 'x150_DarkSeaGreen3', 'NONE')
+call s:X('DiffChange', 'x248_Grey66', 'x237_Grey23', 'NONE')
+call s:X('DiffDelete', 'x234_Grey11', 'x174_LightPink3', 'NONE')
+call s:X('DiffText', 'x237_Grey23', 'x234_Grey11', 'NONE')
 
-call s:X('Directory', 'x110_LightSkyBlue3', '', 'none')
+call s:X('Directory', 'x110_LightSkyBlue3', '', 'NONE')
 " vim: set ts=2 sts=2 sw=2 et ff=unix fen:
