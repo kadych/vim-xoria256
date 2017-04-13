@@ -324,7 +324,7 @@ call s:X('CursorLine', '', 'x235_Grey15', 'NONE') " the screen line that the cur
 call s:X('FoldColumn', 'x241_Grey39', 'x233_Grey7', 'NONE') " fold column color
 call s:X('Folded', 'x248_Grey66', 'x237_Grey23', 'NONE') " line used for closed folds
 call s:X('IncSearch', 'x234_Grey11', 'x223_NavajoWhite1', 'NONE') " incsearch highlighting
-call s:X('Search', 'NONE', 'x235_Grey15', 'bold')
+call s:X('Search', 'NONE', 'x237_Grey23', 'bold')
 call s:X('LineNr', 'x241_Grey39', 'x233_Grey7', 'NONE') " line number
 call s:X('CursorLineNr', 'x229_Wheat1', 'x233_Grey7', 'NONE') " like LineNr for the cursor line
 call s:X('MatchParen', 'x174_LightPink3', 'x237_Grey23', 'bold') " a paired bracket and its match
